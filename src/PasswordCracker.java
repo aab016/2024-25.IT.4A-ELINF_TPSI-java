@@ -16,8 +16,12 @@ public class PasswordCracker {
         // fino a quando non ottiene la corrispondenza con la password
         // del file. A questo punto ritorna la password al chiamante.
         String generatedPassword = "N/A";
+        int pwd = 0;
         do {
-            generatedPassword = "" + (int)(Math.random() * Math.pow(10d, (double)this.password_length));
+            //generatedPassword = "" + (int)(Math.random() * Math.pow(10d, (double)this.password_length));
+            pwd++;
+            generatedPassword = "" + pwd;
+            System.out.println("#" + generatedPassword + "#");
         } while (!this.fileToCrack.open(generatedPassword));
         
         return generatedPassword;
